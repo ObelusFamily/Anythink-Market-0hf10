@@ -2,6 +2,8 @@ import ListErrors from "./ListErrors";
 import React from "react";
 import agent from "../agent";
 import { connect } from "react-redux";
+import defaultBackgroundImg from "../imgs/editor/defaultBackground.png";
+
 import {
   ADD_TAG,
   EDITOR_PAGE_LOADED,
@@ -14,6 +16,16 @@ import {
 const mapStateToProps = (state) => ({
   ...state.editor,
 });
+
+const validateImgAndReturnLink = (imgLink) => {
+  if (imgLink != undefined && imgLink.length > 0) {
+    return imgLink;
+  }
+  else {
+    alert('No image was submitted. Default image is set');
+    return defaultBackgroundImg;
+  }
+}
 
 const mapDispatchToProps = (dispatch) => ({
   onAddTag: () => dispatch({ type: ADD_TAG }),
@@ -49,10 +61,13 @@ class Editor extends React.Component {
 
     this.submitForm = (ev) => {
       ev.preventDefault();
+
+      let imgLink = validateImgAndReturnLink(this.props.image);
+
       const item = {
         title: this.props.title,
         description: this.props.description,
-        image: this.props.image,
+        image: imgLink,
         tagList: this.props.tagList,
       };
 
@@ -93,7 +108,7 @@ class Editor extends React.Component {
           <div className="row">
             <div className="col-md-10 offset-md-1 col-xs-12">
               <ListErrors errors={this.props.errors}></ListErrors>
-
+              <h1> YO YO </h1>
               <form>
                 <fieldset>
                   <fieldset className="form-group">
