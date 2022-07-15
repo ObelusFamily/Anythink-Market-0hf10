@@ -108,7 +108,6 @@ class Editor extends React.Component {
           <div className="row">
             <div className="col-md-10 offset-md-1 col-xs-12">
               <ListErrors errors={this.props.errors}></ListErrors>
-              <h1> YO YO </h1>
               <form>
                 <fieldset>
                   <fieldset className="form-group">
