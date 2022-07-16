@@ -2,6 +2,7 @@ import ListErrors from "./ListErrors";
 import React from "react";
 import agent from "../agent";
 import { connect } from "react-redux";
+
 import {
   ADD_TAG,
   EDITOR_PAGE_LOADED,
@@ -93,7 +94,6 @@ class Editor extends React.Component {
           <div className="row">
             <div className="col-md-10 offset-md-1 col-xs-12">
               <ListErrors errors={this.props.errors}></ListErrors>
-
               <form>
                 <fieldset>
                   <fieldset className="form-group">
