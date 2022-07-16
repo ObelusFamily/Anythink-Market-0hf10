@@ -15,7 +15,7 @@ $input-border-color: #d0d0d0;
 $font-family-base: "Poppins", sans-serif !important;
 
 $theme-colors: (
-  "light-gray": #f2f2f2,
+        "light-gray": #f2f2f2,
 );
 
 // Import Bootstrap and its default variables
@@ -27,6 +27,7 @@ body {
   background-position: top;
   background-repeat: no-repeat;
 }
+
 .page {
   margin-top: 2 * $spacer;
   margin-bottom: 2 * $spacer;
@@ -58,7 +59,8 @@ body {
 
 .default-background {
   display: -webkit-box;
-  background: url('/frontend/src/imgs/background.png');
+  //background-image: url('/frontend/src/imgs/background.png');
+  text-overflow: ellipsis;
 }
 
 .user-info {
