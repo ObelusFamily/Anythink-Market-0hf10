@@ -56,9 +56,9 @@ body {
   -webkit-box-orient: vertical;
 }
 
-.user-info-test {
-  min-width: 800px;
+.default-background {
   display: -webkit-box;
+  background: url('/frontend/src/imgs/background.png');
 }
 
 .user-info {
