@@ -2,7 +2,6 @@ import ListErrors from "./ListErrors";
 import React from "react";
 import agent from "../agent";
 import { connect } from "react-redux";
-import defaultBackgroundImg from "../imgs/editor/defaultBackground.png";
 
 import {
   ADD_TAG,
@@ -16,16 +15,6 @@ import {
 const mapStateToProps = (state) => ({
   ...state.editor,
 });
-
-const validateImgAndReturnLink = (imgLink) => {
-  if (imgLink != undefined && imgLink.length > 0) {
-    return imgLink;
-  }
-  else {
-    alert('No image was submitted. Default image is set');
-    return defaultBackgroundImg;
-  }
-}
 
 const mapDispatchToProps = (dispatch) => ({
   onAddTag: () => dispatch({ type: ADD_TAG }),
@@ -61,13 +50,10 @@ class Editor extends React.Component {
 
     this.submitForm = (ev) => {
       ev.preventDefault();
-
-      let imgLink = validateImgAndReturnLink(this.props.image);
-
       const item = {
         title: this.props.title,
         description: this.props.description,
-        image: imgLink,
+        image: this.props.image,
         tagList: this.props.tagList,
       };
 
