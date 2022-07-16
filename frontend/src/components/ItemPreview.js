@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import agent from "../agent";
 import { connect } from "react-redux";
 import { ITEM_FAVORITED, ITEM_UNFAVORITED } from "../constants/actionTypes";
-import defaultBackgroundImg from "../imgs/editor/defaultBackground.png";
+// import defaultBackgroundImg from "../imgs/editor/defaultBackground.png";
 
 const mapDispatchToProps = (dispatch) => ({
   favorite: (slug) =>
@@ -30,13 +30,13 @@ const ItemPreview = (props) => {
     }
   };
 
-  const validateImgAndReturnLink = (imgLink) => {
-    if (imgLink !== undefined && imgLink.length > 0) {
-      return imgLink;
-    } else {
-      return defaultBackgroundImg;
-    }
-  };
+  // const validateImgAndReturnLink = (imgLink) => {
+  //   if (imgLink !== undefined && imgLink.length > 0) {
+  //     return imgLink;
+  //   } else {
+  //     return defaultBackgroundImg;
+  //   }
+  // };
 
   return (
     <div
@@ -45,8 +45,8 @@ const ItemPreview = (props) => {
     >
       <img
         alt="item"
-        src={validateImgAndReturnLink(item.image)}
-        className="card-img-top item-img"
+        src={item.image}
+        className="card-img-top item-img image_placeholder"
         style={{ borderRadius: "20px" }}
       />
       <div className="card-body">
