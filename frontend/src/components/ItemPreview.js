@@ -33,8 +33,7 @@ const ItemPreview = (props) => {
   const validateImgAndReturnLink = (imgLink) => {
     if (imgLink !== undefined && imgLink.length > 0) {
       return imgLink;
-    }
-    else {
+    } else {
       return defaultBackgroundImg;
     }
   };
